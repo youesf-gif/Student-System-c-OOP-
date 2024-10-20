@@ -1,6 +1,6 @@
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
-//create Model Share Data
+// create Model Share Data
 class ShareData
 {
 private:
@@ -27,7 +27,7 @@ public:
         return name;
     }
 };
-//create Model Base Entity
+// create Model Base Entity
 class BaseEntity : public ShareData
 {
 private:
@@ -54,7 +54,7 @@ public:
         return phone;
     }
 };
-//create Model Teacher
+// create Model Teacher
 class Teacher : public BaseEntity
 {
 private:
@@ -84,11 +84,12 @@ public:
         return StudentIds;
     }
 };
-//create Model Course
+// create Model Course
 class Course : public ShareData
 {
 private:
     double hours;
+    int CourseIds[5];
 
 public:
     // seterr
@@ -96,13 +97,24 @@ public:
     {
         this->hours = hours;
     }
+    void setCourseIds(int CourseIds[5])
+    {
+        for (int i = 0; i < (sizeof(this->StudentIds) / sizeof(StudentIds[0])); i++)
+        {
+            this->CourseIds[i] = CourseIds[i];
+        }
+    }
     // geterr
     double getHours()
     {
         return hours;
     }
+    int *setCourseIds()
+    {
+        return CourseIds;
+    }
 };
-//create Model Student
+// create Model Student
 class Student : public BaseEntity
 {
 private:
