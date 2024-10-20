@@ -69,7 +69,7 @@ public:
     }
     void setStudentIds(int StudentIds[5])
     {
-        for (int i = 0; i < (sizeof(StudentIds) / sizeof(StudentIds[0])); i++)
+        for (int i = 0; i < (sizeof(this->StudentIds) / sizeof(StudentIds[0])); i++)
         {
             this->StudentIds[i] = StudentIds[i];
         }
@@ -82,36 +82,6 @@ public:
     int *setStudentIds()
     {
         return StudentIds;
-    }
-};
-//create Model Student
-class Student : public BaseEntity
-{
-private:
-    double GPA;
-    Teacher arr[5];
-
-public:
-    // seterr
-    void setGPA(double GPA)
-    {
-        this->GPA = GPA;
-    }
-    void setTeachers(Teacher arr[5])
-    {
-        for (int i = 0; i < (sizeof(arr) / sizeof(arr[0])); i++)
-        {
-            this->arr[i] = arr[i];
-        }
-    }
-    // geterr
-    double getGPA()
-    {
-        return GPA;
-    }
-    Teacher *getTeachers()
-    {
-        return arr;
     }
 };
 //create Model Course
@@ -130,5 +100,43 @@ public:
     double getHours()
     {
         return hours;
+    }
+};
+//create Model Student
+class Student : public BaseEntity
+{
+private:
+    double GPA;
+    Teacher teachers[5];
+    Course courses[5];
+
+public:
+    // seterr
+    void setGPA(double GPA)
+    {
+        this->GPA = GPA;
+    }
+    void setTeachers(Teacher teachers[5])
+    {
+        for (int i = 0; i < (sizeof(this->teachers) / sizeof(teachers[0])); i++)
+        {
+            this->teachers[i] = teachers[i];
+        }
+    }
+    void setCourses(Course courses[5])
+    {
+        for (int i = 0; i < (sizeof(this->courses) / sizeof(courses[0])); i++)
+        {
+            this->courses[i] = courses[i];
+        }
+    }
+    // geterr
+    double getGPA()
+    {
+        return GPA;
+    }
+    Teacher *getTeachers()
+    {
+        return teachers;
     }
 };
