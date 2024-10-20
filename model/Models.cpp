@@ -1,14 +1,14 @@
 #include <string>
 using namespace std;
-class BaseEntity
+//create Model Share Data
+class ShareData
 {
-protected:
+private:
     int id;
     string name;
-    int age;
-    string phone;
 
 public:
+    // seterr
     void setId(int id)
     {
         this->id = id;
@@ -17,14 +17,7 @@ public:
     {
         this->name = name;
     }
-    void setsAge(int age)
-    {
-        this->age = age;
-    }
-    void setPhone(string phone)
-    {
-        this->phone = phone;
-    }
+    // geterr
     int getId()
     {
         return id;
@@ -33,6 +26,25 @@ public:
     {
         return name;
     }
+};
+//create Model Base Entity
+class BaseEntity : public ShareData
+{
+private:
+    int age;
+    string phone;
+
+public:
+    // seterr
+    void setsAge(int age)
+    {
+        this->age = age;
+    }
+    void setPhone(string phone)
+    {
+        this->phone = phone;
+    }
+    // geterr
     int getAge()
     {
         return age;
@@ -42,6 +54,7 @@ public:
         return phone;
     }
 };
+//create Model Teacher
 class Teacher : public BaseEntity
 {
 private:
@@ -49,17 +62,19 @@ private:
     int StudentIds[5];
 
 public:
+    // seterr
     void setSalary(double Salary)
     {
         this->Salary = Salary;
     }
     void setStudentIds(int StudentIds[5])
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < (sizeof(StudentIds) / sizeof(StudentIds[0])); i++)
         {
             this->StudentIds[i] = StudentIds[i];
         }
     }
+    // geterr
     double getSalary()
     {
         return Salary;
@@ -69,6 +84,7 @@ public:
         return StudentIds;
     }
 };
+//create Model Student
 class Student : public BaseEntity
 {
 private:
@@ -76,17 +92,19 @@ private:
     Teacher arr[5];
 
 public:
+    // seterr
     void setGPA(double GPA)
     {
         this->GPA = GPA;
     }
     void setTeachers(Teacher arr[5])
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < (sizeof(arr) / sizeof(arr[0])); i++)
         {
             this->arr[i] = arr[i];
         }
     }
+    // geterr
     double getGPA()
     {
         return GPA;
@@ -94,5 +112,23 @@ public:
     Teacher *getTeachers()
     {
         return arr;
+    }
+};
+//create Model Course
+class Course : public ShareData
+{
+private:
+    double hours;
+
+public:
+    // seterr
+    void setHours(double hours)
+    {
+        this->hours = hours;
+    }
+    // geterr
+    double getHours()
+    {
+        return hours;
     }
 };
