@@ -46,15 +46,27 @@ class Teacher : public BaseEntity
 {
 private:
     double Salary;
+    int StudentIds[5];
 
 public:
     void setSalary(double Salary)
     {
         this->Salary = Salary;
     }
+    void setStudentIds(int StudentIds[5])
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            this->StudentIds[i] = StudentIds[i];
+        }
+    }
     double getSalary()
     {
         return Salary;
+    }
+    int *setStudentIds()
+    {
+        return StudentIds;
     }
 };
 class Student : public BaseEntity
