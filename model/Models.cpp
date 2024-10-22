@@ -99,7 +99,7 @@ public:
     }
     void setCourseIds(int CourseIds[5])
     {
-        for (int i = 0; i < (sizeof(this->StudentIds) / sizeof(StudentIds[0])); i++)
+        for (int i = 0; i < (sizeof(this->CourseIds) / sizeof(CourseIds[0])); i++)
         {
             this->CourseIds[i] = CourseIds[i];
         }
