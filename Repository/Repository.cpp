@@ -48,7 +48,7 @@ public:
     {
         if (index == 25)
         {
-            cout << "Full Student";
+            cout << "Full Course";
         }
         else
         {
@@ -68,7 +68,7 @@ public:
 class TeacherRepositoryImpl
 {
 private:
-    Course teachers[25];
+    Teacher teachers[25];
     int index = 0;
 
 public:
@@ -76,7 +76,7 @@ public:
     {
         if (index == 25)
         {
-            cout << "Full Student";
+            cout << "Full Teacher";
         }
         else
         {
