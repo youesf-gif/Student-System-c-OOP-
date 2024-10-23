@@ -8,7 +8,7 @@ private:
     string name;
 
 public:
-    // seterr
+    // Setter
     void setId(int id)
     {
         this->id = id;
@@ -17,7 +17,7 @@ public:
     {
         this->name = name;
     }
-    // geterr
+    // Getter
     int getId()
     {
         return id;
@@ -35,7 +35,7 @@ private:
     string phone;
 
 public:
-    // seterr
+    // Setter
     void setsAge(int age)
     {
         this->age = age;
@@ -44,7 +44,7 @@ public:
     {
         this->phone = phone;
     }
-    // geterr
+    // Getter
     int getAge()
     {
         return age;
@@ -62,7 +62,7 @@ private:
     int StudentIds[5];
 
 public:
-    // seterr
+    // Setter
     void setSalary(double Salary)
     {
         this->Salary = Salary;
@@ -74,7 +74,7 @@ public:
             this->StudentIds[i] = StudentIds[i];
         }
     }
-    // geterr
+    // Getter
     double getSalary()
     {
         return Salary;
@@ -92,7 +92,7 @@ private:
     int CourseIds[5];
 
 public:
-    // seterr
+    // Setter
     void setHours(double hours)
     {
         this->hours = hours;
@@ -104,7 +104,7 @@ public:
             this->CourseIds[i] = CourseIds[i];
         }
     }
-    // geterr
+    // Getter
     double getHours()
     {
         return hours;
@@ -123,7 +123,7 @@ private:
     Course courses[5];
 
 public:
-    // seterr
+    // Setter
     void setGPA(double GPA)
     {
         this->GPA = GPA;
@@ -142,7 +142,7 @@ public:
             this->courses[i] = courses[i];
         }
     }
-    // geterr
+    // Getter
     double getGPA()
     {
         return GPA;

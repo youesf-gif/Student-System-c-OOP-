@@ -1,11 +1,13 @@
 #include "..\Repository\Repository.cpp"
 
 //////////////////////////// Student - Service ////////////////////////////
+// interface StudentService
 class StudentService
 {
 public:
     virtual int addStudent(Student student) = 0;
 };
+// Class StudentServiceImpl
 class StudentServiceImpl
 {
 private:
@@ -18,11 +20,13 @@ public:
     }
 }
 //////////////////////////// Course - Service ////////////////////////////
+// interface CourseService
 class CourseService
 {
 public:
     virtual int addCourse(Course course) = 0;
 };
+// Class CourseServiceImpl
 class CourseServiceImpl
 {
 private:
@@ -35,11 +39,13 @@ public:
     }
 }
 //////////////////////////// Teacher - Service ////////////////////////////
+// interface TeacherService
 class TeacherService
 {
 public:
     virtual int addTeacher(Teacher teacher) = 0;
 };
+// Class teacherServiceImpl
 class teacherServiceImpl
 {
 private:

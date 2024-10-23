@@ -8,7 +8,7 @@ class StudentRepository
 public:
     virtual int addStudent(Student student) = 0;
 };
-// StudentRepositoryImpl
+// Class StudentRepositoryImpl
 class StudentRepositoryImpl : StudentRepository
 {
 private:
@@ -36,7 +36,7 @@ class CourseRepository
 public:
     virtual int addCourse(Course course) = 0;
 };
-// CourseRepositoryImpl
+// Class CourseRepositoryImpl
 class CourseRepositoryImpl
 {
 private:
@@ -64,7 +64,7 @@ class TeacherRepository
 public:
     virtual int addTeacher(Teacher teacher) = 0;
 };
-// TeacherRepositoryImpl
+// Class TeacherRepositoryImpl
 class TeacherRepositoryImpl
 {
 private:

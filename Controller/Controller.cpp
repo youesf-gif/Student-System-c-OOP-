@@ -1,4 +1,6 @@
 #include "..\service\Service.cpp"
+//////////////////////////// Student - Controller ////////////////////////////
+// interface StudentController
 class StudentController
 {
 private:
@@ -10,7 +12,8 @@ public:
         return studentService.addStudent(student);
     }
 };
-
+//////////////////////////// Course - Controller ////////////////////////////
+// interface CourseController
 class CourseController
 {
 private:
@@ -22,7 +25,8 @@ public:
         return courseService.addCourse(course);
     }
 };
-
+//////////////////////////// Teacher - Controller ////////////////////////////
+// interface TeacherController
 class TeacherController
 {
 private:
