@@ -1,5 +1,5 @@
 #include <iostream>
-#include "model/Models.cpp"
+#include "Controller/Controller.cpp"
 using namespace std;
 void displaySystem()
 {
@@ -44,11 +44,13 @@ int main()
                 cout << "Enter Student Phone-Number: ";
                 string phoneNumber;
                 cin >> phoneNumber;
-                student.setGPA(phoneNumber);
+                student.setPhone(phoneNumber);
                 cout << "Enter Student GPA: ";
                 double gpa;
                 cin >> gpa;
                 student.setGPA(gpa);
+                Controller studentController;
+                studentController.addStudent(student);
             }
             break;
         case 2:

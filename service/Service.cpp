@@ -12,13 +12,12 @@ class StudentServiceImpl
 {
 private:
     StudentRepository studentRepository;
-
 public:
     int addStudent(Student student)
     {
-        return StudentRepository.addStudent(student);
+        return studentRepository.addStudent(student);
     }
-}
+};
 //////////////////////////// Course - Service ////////////////////////////
 // interface CourseService
 class CourseService
@@ -35,9 +34,9 @@ private:
 public:
     int addCourse(Course course)
     {
-        return CourseRepository.addCourse(course);
+        return courseRepository.addCourse(course);
     }
-}
+};
 //////////////////////////// Teacher - Service ////////////////////////////
 // interface TeacherService
 class TeacherService
@@ -54,6 +53,6 @@ private:
 public:
     int addTeacher(Teacher teacher)
     {
-        return TeacherRepository.addTeacher(teacher);
+        return teacherRepository.addTeacher(teacher);
     }
-}
+};
