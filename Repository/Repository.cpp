@@ -9,7 +9,7 @@ public:
     virtual int addStudent(Student student) = 0;
 };
 // Class StudentRepositoryImpl
-class StudentRepositoryImpl : StudentRepository
+class StudentRepositoryImpl : public StudentRepository
 {
 private:
     Student students[25];
@@ -37,14 +37,14 @@ public:
     virtual int addCourse(Course course) = 0;
 };
 // Class CourseRepositoryImpl
-class CourseRepositoryImpl
+class CourseRepositoryImpl : public CourseRepository
 {
 private:
     Course courses[25];
     int index = 0;
 
 public:
-    int addStudent(Course course)
+    int addCourse(Course course)
     {
         if (index == 25)
         {
@@ -65,7 +65,7 @@ public:
     virtual int addTeacher(Teacher teacher) = 0;
 };
 // Class TeacherRepositoryImpl
-class TeacherRepositoryImpl
+class TeacherRepositoryImpl : public TeacherRepository
 {
 private:
     Teacher teachers[25];

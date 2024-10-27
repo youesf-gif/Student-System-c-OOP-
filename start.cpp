@@ -49,7 +49,7 @@ int main()
                 double gpa;
                 cin >> gpa;
                 student.setGPA(gpa);
-                Controller studentController;
+                StudentController studentController;
                 studentController.addStudent(student);
             }
             break;
