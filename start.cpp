@@ -1,4 +1,5 @@
 #include <iostream>
+#include "model/Models.cpp"
 using namespace std;
 void displaySystem()
 {
@@ -15,6 +16,7 @@ void showList(string value)
 }
 int main()
 {
+
     int process;
     bool flag = 1;
     while (flag)
@@ -25,6 +27,29 @@ int main()
         {
         case 1:
             showList("Student");
+            int processStudent;
+            cin >> processStudent;
+            if (processStudent == 1)
+            {
+                cout << "Please Enter Student Data:" << endl;
+                Student student;
+                cout << "Enter Student Name: ";
+                string name;
+                cin >> name;
+                student.setname(name);
+                cout << "Enter Student Age: ";
+                int age;
+                cin >> age;
+                student.setAge(age);
+                cout << "Enter Student Phone-Number: ";
+                string phoneNumber;
+                cin >> phoneNumber;
+                student.setGPA(phoneNumber);
+                cout << "Enter Student GPA: ";
+                double gpa;
+                cin >> gpa;
+                student.setGPA(gpa);
+            }
             break;
         case 2:
             showList("Course");
