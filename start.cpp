@@ -50,7 +50,8 @@ int main()
                 cin >> gpa;
                 student.setGPA(gpa);
                 StudentController studentController;
-                studentController.addStudent(student);
+                int id = studentController.addStudent(student);
+                cout << "ID: " << id;
             }
             break;
         case 2:
