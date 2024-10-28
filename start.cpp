@@ -3,13 +3,14 @@
 using namespace std;
 void displaySystem()
 {
-    cout << "\t\t**************** Student Management System ****************" << endl;
+    cout << "\t\t**************** Management System ****************" << endl;
     cout << "Please Enter Process You To Do" << endl;
     cout << "1 - About Students" << "\t\t" << "2 - About Courses" << endl;
     cout << "3 - About Teachers" << "\t\t" << "4 - Exit" << endl;
 }
 void showList(string value)
 {
+    cout << "\t\t**************** " << value << " Management System ****************" << endl;
     cout << "1 - Add " << value << "\t\t" << "2 - Remove " << value << endl;
     cout << "3 - Edit " << value << (value == "Course" ? "\t\t" : "\t") << "4 - Show " << value << endl;
     cout << "5 - Exit" << endl;
@@ -35,25 +36,46 @@ void addStudent()
     cin >> gpa;
     student.setGPA(gpa);
     StudentController studentController;
-    int id = studentController.addStudent(student);
-    cout << "Success Add ID [" << id << "]" << endl;
+    cout << "Success Add Student ID [" << studentController.addStudent(student) << "]" << endl;
 }
-// void addCourse()
-// {
-//     cout << "Please Enter Student Data:" << endl;
-//     Course course;
-//     cout << "Enter Course Name: ";
-//     string name;
-//     cin >> name;
-//     course.setname(name);
-//     cout << "Enter Course Hour: ";
-//     int hours;
-//     cin >> hours;
-//     course.hours(hours);
-//     CourseController courseController;
-//     int id = courseController.addCourse(course);
-//     cout << "Success Add ID [" << id << "]" << endl;
-// }
+void addCourse()
+{
+    cout << "Please Enter Course Data:" << endl;
+    Course course;
+    cout << "Enter Course Name: ";
+    string name;
+    cin >> name;
+    course.setname(name);
+    cout << "Enter Course Hour: ";
+    double hours;
+    cin >> hours;
+    course.setHours(hours);
+    CourseController courseController;
+    cout << "Success Add Course ID [" << courseController.addCourse(course) << "]" << endl;
+}
+void addTeacher()
+{
+    cout << "Please Enter Teacher Data:" << endl;
+    Teacher teacher;
+    cout << "Enter Course Name: ";
+    string name;
+    cin >> name;
+    teacher.setname(name);
+    cout << "Enter Teacher Age: ";
+    int age;
+    cin >> age;
+    teacher.setAge(age);
+    cout << "Enter Teacher Phone-Number: ";
+    string phoneNumber;
+    cin >> phoneNumber;
+    teacher.setPhone(phoneNumber);
+    cout << "Enter Course Salary: ";
+    double salary;
+    cin >> salary;
+    teacher.setSalary(salary);
+    TeacherController teacherController;
+    cout << "Success Add Teacher ID [" << teacherController.addTeacher(teacher) << "]" << endl;
+}
 int process;
 int main()
 {
@@ -96,8 +118,7 @@ int main()
             switch (process)
             {
             case 1:
-                // addCourse();
-                cout << "Add Course" << endl;
+                addCourse();
                 break;
             case 2:
                 cout << "Remove Course" << endl;
@@ -121,8 +142,7 @@ int main()
             switch (process)
             {
             case 1:
-                // addTeacher();
-                cout << "Add Teacher" << endl;
+                addTeacher();
                 break;
             case 2:
                 cout << "Remove Teacher" << endl;
