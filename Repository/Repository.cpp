@@ -50,7 +50,7 @@ public:
             data.students[data.indexStudent] = student;
             data.indexStudent++;
         }
-        return data.idStudent--;
+        return student.getId();
     }
 };
 ///////////////////////////////// Course /////////////////////////////////
@@ -69,15 +69,17 @@ private:
 public:
     int addCourse(Course course)
     {
-        if (index == 25)
+        if (data.indexCourse == 25)
         {
             cout << "Full Course";
         }
         else
         {
-            courses[index] = course;
-            index++;
+            course.setId(data.idCourse++);
+            data.courses[data.indexCourse] = course;
+            data.indexCourse++;
         }
+        return course.getId();
     }
 };
 ///////////////////////////////// Teacher /////////////////////////////////
@@ -96,14 +98,16 @@ private:
 public:
     int addTeacher(Teacher teacher)
     {
-        if (index == 25)
+        if (data.indexTeacher == 25)
         {
             cout << "Full Teacher";
         }
         else
         {
-            teachers[index] = teacher;
-            index++;
+            teacher.setId(data.idTeacher++);
+            data.teachers[data.indexTeacher] = teacher;
+            data.indexTeacher++;
         }
+        return teacher.getId();
     }
 };

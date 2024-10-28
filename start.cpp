@@ -51,7 +51,7 @@ int main()
                 student.setGPA(gpa);
                 StudentController studentController;
                 int id = studentController.addStudent(student);
-                cout << "ID: " << id;
+                cout << "ID: " << id << endl;
             }
             break;
         case 2:
