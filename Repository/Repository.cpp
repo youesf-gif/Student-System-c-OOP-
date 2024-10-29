@@ -44,13 +44,12 @@ public:
     {
         if (data.indexStudent == 25)
         {
-            cout << "Full Student";
+            return -1;
         }
         else
         {
             student.setId(data.idStudent++);
-            data.students[data.indexStudent] = student;
-            data.indexStudent++;
+            data.students[data.indexStudent++] = student;
         }
         return student.getId();
     }

@@ -1,5 +1,5 @@
 /********************************* Validation Class *********************************/
-//StudentValidation Class
+// StudentValidation Class
 class StudentValidation
 {
 public:
@@ -35,7 +35,7 @@ public:
         return -1;
     }
 };
-//CourseValidation Class
+// CourseValidation Class
 class CourseValidation
 {
 public:
@@ -57,7 +57,7 @@ public:
         return -1;
     }
 };
-//TeacherValidation Class
+// TeacherValidation Class
 class TeacherValidation
 {
 public:
@@ -91,5 +91,14 @@ public:
             return 1;
         }
         return -1;
+    }
+};
+class ValidationService
+{
+
+public:
+    void fullData(string type)
+    {
+        cout << "Full " << type << " !" << endl;
     }
 };

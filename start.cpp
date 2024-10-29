@@ -170,7 +170,6 @@ int main()
         {
         case 1:
             showList("Student");
-            int process;
             cin >> process;
             switchStudent();
             break;
