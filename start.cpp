@@ -36,7 +36,11 @@ void addStudent()
     cin >> gpa;
     student.setGPA(gpa);
     StudentController studentController;
-    cout << "Success Add Student ID [" << studentController.addStudent(student) << "]" << endl;
+    int id = studentController.addStudent(student);
+    if (id != -1)
+    {
+        cout << "Success Add Student ID [" << id << "]" << endl;
+    }
 }
 void addCourse()
 {
