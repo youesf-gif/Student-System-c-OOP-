@@ -1,3 +1,5 @@
+/********************************* Validation Class *********************************/
+//StudentValidation Class
 class StudentValidation
 {
 public:
@@ -33,6 +35,7 @@ public:
         return -1;
     }
 };
+//CourseValidation Class
 class CourseValidation
 {
 public:
@@ -54,6 +57,7 @@ public:
         return -1;
     }
 };
+//TeacherValidation Class
 class TeacherValidation
 {
 public:
