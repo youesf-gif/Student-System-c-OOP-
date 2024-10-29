@@ -55,7 +55,11 @@ void addCourse()
     cin >> hours;
     course.setHours(hours);
     CourseController courseController;
-    cout << "Success Add Course ID [" << courseController.addCourse(course) << "]" << endl;
+    int id = courseController.addCourse(course);
+    if (id != -1)
+    {
+        cout << "Success Add Course ID [" << id << "]" << endl;
+    }
 }
 void addTeacher()
 {
@@ -78,7 +82,11 @@ void addTeacher()
     cin >> salary;
     teacher.setSalary(salary);
     TeacherController teacherController;
-    cout << "Success Add Teacher ID [" << teacherController.addTeacher(teacher) << "]" << endl;
+    int id = teacherController.addTeacher(teacher);
+    if (id != -1)
+    {
+        cout << "Success Add Teacher ID [" << id << "]" << endl;
+    }
 }
 int process;
 int main()
