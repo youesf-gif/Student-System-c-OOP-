@@ -72,13 +72,12 @@ public:
     {
         if (data.indexCourse == 25)
         {
-            cout << "Full Course";
+            return -1;
         }
         else
         {
             course.setId(data.idCourse++);
-            data.courses[data.indexCourse] = course;
-            data.indexCourse++;
+            data.courses[data.indexCourse++] = course;
         }
         return course.getId();
     }
@@ -101,13 +100,12 @@ public:
     {
         if (data.indexTeacher == 25)
         {
-            cout << "Full Teacher";
+            return -1;
         }
         else
         {
             teacher.setId(data.idTeacher++);
-            data.teachers[data.indexTeacher] = teacher;
-            data.indexTeacher++;
+            data.teachers[data.indexTeacher++] = teacher;
         }
         return teacher.getId();
     }
