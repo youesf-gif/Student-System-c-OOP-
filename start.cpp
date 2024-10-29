@@ -15,7 +15,7 @@ void showList(string value)
     cout << "\t\t**************** " << value << " Management System ****************" << endl;
     cout << "1 - Add " << value << "\t\t" << "2 - Remove " << value << endl;
     cout << "3 - Edit " << value << (value == "Course" ? "\t\t" : "\t") << "4 - Show " << value << endl;
-    cout << "5 - Exit" << endl;
+    cout << "5 - Show " << value << "By ID" << (value == "Course" ? "\t\t" : "\t") << "6 - Exit" << endl;
 }
 void addStudent()
 {
@@ -101,12 +101,15 @@ void switchStudent()
         cout << "Remove Student" << endl;
         break;
     case 3:
-        cout << "Show Student" << endl;
-        break;
-    case 4:
         cout << "Edit Student" << endl;
         break;
+    case 4:
+        cout << "Show Student" << endl;
+        break;
     case 5:
+        cout << "Show Student By ID" << endl;
+        break;
+    case 6:
         break;
     default:
         cout << "Invalid Choose" << endl;
@@ -124,12 +127,15 @@ void switchCourse()
         cout << "Remove Course" << endl;
         break;
     case 3:
-        cout << "Show Course" << endl;
-        break;
-    case 4:
         cout << "Edit Course" << endl;
         break;
+    case 4:
+        cout << "Show Course" << endl;
+        break;
     case 5:
+        cout << "Show Course By ID" << endl;
+        break;
+    case 6:
         break;
     default:
         cout << "Invalid Choose" << endl;
@@ -146,12 +152,15 @@ void switchTeacher()
         cout << "Remove Teacher" << endl;
         break;
     case 3:
-        cout << "Show Teacher" << endl;
-        break;
-    case 4:
         cout << "Edit Teacher" << endl;
         break;
+    case 4:
+        cout << "Show Teacher" << endl;
+        break;
     case 5:
+        cout << "Show Teacher By ID" << endl;
+        break;
+    case 6:
         break;
     default:
         cout << "Invalid Choose" << endl;
