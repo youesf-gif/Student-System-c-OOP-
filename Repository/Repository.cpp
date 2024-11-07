@@ -32,12 +32,14 @@ class StudentRepository
 {
 public:
     virtual int addStudent(Student student) = 0;
+    virtual Student getStudentById(int id) = 0;
 };
 // Class StudentRepositoryImpl
 class StudentRepositoryImpl : public StudentRepository
 {
 private:
     Data data;
+    Student invalidStudent;
 
 public:
     int addStudent(Student student)
@@ -53,6 +55,18 @@ public:
         }
         return student.getId();
     }
+    Student getStudentById(int id)
+    {
+        for (int i = 0; i < data.indexStudent; i++)
+        {
+            if (data.students[i].getId() == id)
+            {
+                return data.students[i];
+            }
+        }
+        invalidStudent.setId(-1);
+        return invalidStudent;
+    }
 };
 ///////////////////////////////// Course /////////////////////////////////
 // interface CourseRepository
@@ -60,12 +74,14 @@ class CourseRepository
 {
 public:
     virtual int addCourse(Course course) = 0;
+    virtual Course getCourseById(int id) = 0;
 };
 // Class CourseRepositoryImpl
 class CourseRepositoryImpl : public CourseRepository
 {
 private:
     Data data;
+    Course invalidCourse;
 
 public:
     int addCourse(Course course)
@@ -81,6 +97,18 @@ public:
         }
         return course.getId();
     }
+    Course getCourseById(int id)
+    {
+        for (int i = 0; i < data.indexCourse; i++)
+        {
+            if (data.courses[i].getId() == id)
+            {
+                return data.courses[i];
+            }
+        }
+        invalidCourse.setId(-1);
+        return invalidCourse;
+    }
 };
 ///////////////////////////////// Teacher /////////////////////////////////
 // interface TeacherRepository
@@ -88,12 +116,14 @@ class TeacherRepository
 {
 public:
     virtual int addTeacher(Teacher teacher) = 0;
+    virtual Teacher getTeacherById(int id) = 0;
 };
 // Class TeacherRepositoryImpl
 class TeacherRepositoryImpl : public TeacherRepository
 {
 private:
     Data data;
+    Teacher invalidTeacher;
 
 public:
     int addTeacher(Teacher teacher)
@@ -108,5 +138,17 @@ public:
             data.teachers[data.indexTeacher++] = teacher;
         }
         return teacher.getId();
+    }
+    Teacher getTeacherById(int id)
+    {
+        for (int i = 0; i < data.indexTeacher; i++)
+        {
+            if (data.teachers[i].getId() == id)
+            {
+                return data.teachers[i];
+            }
+        }
+        invalidTeacher.setId(-1);
+        return invalidTeacher;
     }
 };
