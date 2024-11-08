@@ -101,4 +101,8 @@ public:
     {
         cout << "Full " << type << " !" << endl;
     }
+    void noExist(string type, int id)
+    {
+        cout << type << " With Id [" << id << "] Not Exist" << endl;
+    }
 };
