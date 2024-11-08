@@ -17,8 +17,8 @@ public:
         studentResult = studentService.getStudentById(id);
         if (studentResult.getId() != -1)
         {
-            cout << "\t\t id \t\t Name \t\t Age \t\t Phone-Number \t\t GPA" << endl;
-            cout << "\t\t" << studentResult.getId() << "\t\t" << studentResult.getname() << "\t\t" << studentResult.getAge() << "\t\t" << studentResult.getGPA() << endl;
+            cout << "\t\tID \t\tName \t\tAge \t\tPhone-Number \t\tGPA" << endl;
+            cout << "\t\t" << studentResult.getId() << "\t\t" << studentResult.getname() << "\t\t" << studentResult.getAge() << "\t\t" << studentResult.getPhone() << "\t\t" << studentResult.getGPA() << endl;
         }
     }
 };
@@ -27,7 +27,7 @@ public:
 class CourseController
 {
 private:
-    CourseRepositoryImpl courseService;
+    CourseServiceImpl courseService;
     Course courseResult;
 
 public:
@@ -40,7 +40,7 @@ public:
         courseResult = courseService.getCourseById(id);
         if (courseResult.getId() != -1)
         {
-            cout << "\t\t id \t\t Name \t\t Age" << endl;
+            cout << "\t\tID \t\tName \t\tHour" << endl;
             cout << "\t\t" << courseResult.getId() << "\t\t" << courseResult.getname() << "\t\t" << courseResult.getHours() << endl;
         }
     }
@@ -50,7 +50,7 @@ public:
 class TeacherController
 {
 private:
-    TeacherRepositoryImpl teacherService;
+    teacherServiceImpl teacherService;
     Teacher teacherResult;
 
 public:
@@ -63,8 +63,8 @@ public:
         teacherResult = teacherService.getTeacherById(id);
         if (teacherResult.getId() != -1)
         {
-            cout << "\t\t id \t\t Name \t\t Age \t\t Phone-Number \t\t Salary" << endl;
-            cout << "\t\t" << teacherResult.getId() << "\t\t" << teacherResult.getname() << "\t\t" << teacherResult.getAge() << "\t\t" << teacherResult.getSalary() << endl;
+            cout << "\t\tID \t\t Name \t\tAge \t\tPhone-Number \t\tSalary" << endl;
+            cout << "\t\t" << teacherResult.getId() << "\t\t" << teacherResult.getname() << "\t\t" << teacherResult.getAge() << "\t\t" << teacherResult.getPhone() << "\t\t" << teacherResult.getSalary() << endl;
         }
     }
 };

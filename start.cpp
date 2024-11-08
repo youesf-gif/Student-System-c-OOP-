@@ -15,7 +15,7 @@ void showList(string value)
     cout << "\t\t**************** " << value << " Management System ****************" << endl;
     cout << "1 - Add " << value << "\t\t" << "2 - Remove " << value << endl;
     cout << "3 - Edit " << value << (value == "Course" ? "\t\t" : "\t") << "4 - Show " << value << endl;
-    cout << "5 - Show " << value << "By ID" << (value == "Course" ? "\t\t" : "\t") << "6 - Exit" << endl;
+    cout << "5 - Show " << value << " By ID" << "\t" << "6 - Exit" << endl;
 }
 void addStudent()
 {
@@ -90,6 +90,27 @@ void addTeacher()
         cout << "Success Add Teacher ID [" << id << "]" << endl;
     }
 }
+void showStudentById()
+{
+    cout << "Enter Student ID: ";
+    cin >> id;
+    StudentController studentController;
+    studentController.showStudentById(id);
+}
+void showCoursetById()
+{
+    cout << "Enter Course ID: ";
+    cin >> id;
+    CourseController courseController;
+    courseController.showCourseById(id);
+}
+void showTeacherById()
+{
+    cout << "Enter Teacher ID: ";
+    cin >> id;
+    TeacherController teacherController;
+    teacherController.showTeacherById(id);
+}
 void switchStudent()
 {
     switch (process)
@@ -107,7 +128,7 @@ void switchStudent()
         cout << "Show Student" << endl;
         break;
     case 5:
-        cout << "Show Student By ID" << endl;
+        showStudentById();
         break;
     case 6:
         break;
@@ -133,7 +154,7 @@ void switchCourse()
         cout << "Show Course" << endl;
         break;
     case 5:
-        cout << "Show Course By ID" << endl;
+        showCoursetById();
         break;
     case 6:
         break;
@@ -158,7 +179,7 @@ void switchTeacher()
         cout << "Show Teacher" << endl;
         break;
     case 5:
-        cout << "Show Teacher By ID" << endl;
+        showTeacherById();
         break;
     case 6:
         break;
