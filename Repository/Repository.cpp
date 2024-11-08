@@ -33,6 +33,7 @@ class StudentRepository
 public:
     virtual int addStudent(Student student) = 0;
     virtual Student getStudentById(int id) = 0;
+    virtual int editStudent(Student student) = 0;
 };
 // Class StudentRepositoryImpl
 class StudentRepositoryImpl : public StudentRepository
@@ -40,6 +41,7 @@ class StudentRepositoryImpl : public StudentRepository
 private:
     Data data;
     Student invalidStudent;
+    int index = -1;
 
 public:
     int addStudent(Student student)
@@ -67,6 +69,26 @@ public:
         invalidStudent.setId(-1);
         return invalidStudent;
     }
+    int editStudent(Student student)
+    {
+        for (int i = 0; i < data.indexStudent; i++)
+        {
+            if (data.students[i].getId == student.getId())
+            {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1)
+        {
+            return -1;
+        }
+        else
+        {
+            data.students[index] = student;
+            return index;
+        }
+    }
 };
 ///////////////////////////////// Course /////////////////////////////////
 // interface CourseRepository
@@ -75,6 +97,7 @@ class CourseRepository
 public:
     virtual int addCourse(Course course) = 0;
     virtual Course getCourseById(int id) = 0;
+    virtual int editCourse(Course course) = 0;
 };
 // Class CourseRepositoryImpl
 class CourseRepositoryImpl : public CourseRepository
@@ -82,6 +105,7 @@ class CourseRepositoryImpl : public CourseRepository
 private:
     Data data;
     Course invalidCourse;
+    int index = -1;
 
 public:
     int addCourse(Course course)
@@ -109,6 +133,26 @@ public:
         invalidCourse.setId(-1);
         return invalidCourse;
     }
+    int editCourse(Course course)
+    {
+        for (int i = 0; i < data.indexCourse; i++)
+        {
+            if (data.courses[i].getId == course.getId())
+            {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1)
+        {
+            return -1;
+        }
+        else
+        {
+            data.courses[index] = course;
+            return index;
+        }
+    }
 };
 ///////////////////////////////// Teacher /////////////////////////////////
 // interface TeacherRepository
@@ -117,6 +161,7 @@ class TeacherRepository
 public:
     virtual int addTeacher(Teacher teacher) = 0;
     virtual Teacher getTeacherById(int id) = 0;
+    virtual int editTeacher(Teacher teacher) = 0;
 };
 // Class TeacherRepositoryImpl
 class TeacherRepositoryImpl : public TeacherRepository
@@ -124,6 +169,7 @@ class TeacherRepositoryImpl : public TeacherRepository
 private:
     Data data;
     Teacher invalidTeacher;
+    int index = -1;
 
 public:
     int addTeacher(Teacher teacher)
@@ -150,5 +196,25 @@ public:
         }
         invalidTeacher.setId(-1);
         return invalidTeacher;
+    }
+    int editTeacher(Teacher teacher)
+    {
+        for (int i = 0; i < data.indexTeacher; i++)
+        {
+            if (data.teachers[i].getId == teacher.getId())
+            {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1)
+        {
+            return -1;
+        }
+        else
+        {
+            data.teachers[index] = teacher;
+            return index;
+        }
     }
 };
