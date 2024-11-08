@@ -56,6 +56,7 @@ public:
         {
             cout << "Sucess Edit Student With ID [" << student.getId() << "]" << endl;
         }
+        return -1;
     }
 };
 //////////////////////////// Course - Service ////////////////////////////
@@ -113,6 +114,7 @@ public:
         {
             cout << "Sucess Edit Student With ID [" << course.getId() << "]" << endl;
         }
+        return -1;
     }
 };
 //////////////////////////// Teacher - Service ////////////////////////////
@@ -170,5 +172,6 @@ public:
         {
             cout << "Sucess Edit Student With ID [" << teacher.getId() << "]" << endl;
         }
+        return -1;
     }
 };
