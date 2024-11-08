@@ -73,7 +73,7 @@ public:
     {
         for (int i = 0; i < data.indexStudent; i++)
         {
-            if (data.students[i].getId == student.getId())
+            if (data.students[i].getId() == student.getId())
             {
                 index = i;
                 break;
@@ -137,7 +137,7 @@ public:
     {
         for (int i = 0; i < data.indexCourse; i++)
         {
-            if (data.courses[i].getId == course.getId())
+            if (data.courses[i].getId() == course.getId())
             {
                 index = i;
                 break;
@@ -201,7 +201,7 @@ public:
     {
         for (int i = 0; i < data.indexTeacher; i++)
         {
-            if (data.teachers[i].getId == teacher.getId())
+            if (data.teachers[i].getId() == teacher.getId())
             {
                 index = i;
                 break;
