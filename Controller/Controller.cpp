@@ -21,6 +21,10 @@ public:
             cout << "\t\t" << studentResult.getId() << "\t\t" << studentResult.getname() << "\t\t" << studentResult.getAge() << "\t\t" << studentResult.getPhone() << "\t\t" << studentResult.getGPA() << endl;
         }
     }
+    void updateStudent(Student student)
+    {
+        studentService.editStudent(student);
+    }
 };
 //////////////////////////// Course - Controller ////////////////////////////
 // interface CourseController
@@ -44,6 +48,10 @@ public:
             cout << "\t\t" << courseResult.getId() << "\t\t" << courseResult.getname() << "\t\t" << courseResult.getHours() << endl;
         }
     }
+    void updateCourse(Course course)
+    {
+        courseService.editCourse(course);
+    }
 };
 //////////////////////////// Teacher - Controller ////////////////////////////
 // interface TeacherController
@@ -66,5 +74,9 @@ public:
             cout << "\t\tID \t\t Name \t\tAge \t\tPhone-Number \t\tSalary" << endl;
             cout << "\t\t" << teacherResult.getId() << "\t\t" << teacherResult.getname() << "\t\t" << teacherResult.getAge() << "\t\t" << teacherResult.getPhone() << "\t\t" << teacherResult.getSalary() << endl;
         }
+    }
+    void updateTeacher(Teacher teacher)
+    {
+        teacherService.editTeacher(teacher);
     }
 };
